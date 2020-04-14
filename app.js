@@ -9,6 +9,7 @@ require('dotenv').config();
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signupRoute = require('./routes/signup');
+var loginRoute = require('./routes/login');
 
 var app = express();
 app.use(cors({origin: true, credentials: true}));
@@ -31,8 +32,13 @@ mongoose
     console.log('Not connected to db, error:', error);
   });
 
+// function protect (request, response, next) {
+//   if (request.)
+// }
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signupRoute);
+app.use('/login', loginRoute);
 
 module.exports = app;
