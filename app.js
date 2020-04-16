@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signupRoute = require('./routes/signup');
 var loginRoute = require('./routes/login');
+var portfolioRoute = require('./routes/portfolioCreation');
 
 var app = express();
 app.use(cors({origin: true, credentials: true}));
@@ -40,5 +41,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signupRoute);
 app.use('/login', loginRoute);
+app.use('/portfolio', portfolioRoute);
 
 module.exports = app;
